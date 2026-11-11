@@ -29,6 +29,13 @@ This builds a small image, runs every attack at every level twice, measures
 start-up time, and writes `results.md` and `results.json` here. It takes about
 two minutes. The container runs with `--network none`.
 
+Ubuntu 24.04 restricts unprivileged user namespaces through AppArmor, and level 1
+fails there with `Operation not permitted`. Allow them first:
+
+```sh
+sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
+```
+
 ## Use the sandbox
 
 On Linux, as an ordinary user:

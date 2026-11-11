@@ -14,6 +14,9 @@ jobs:
         run: |
           uname -srm
           sysctl kernel.apparmor_restrict_unprivileged_userns || true
+      - name: Allow unprivileged user namespaces
+        # Ubuntu 24.04 restricts them through AppArmor, and level 1 needs one.
+        run: sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
       - name: Run every attack at every level
         run: ./run-in-docker.sh
       - uses: actions/upload-artifact@v4

@@ -499,8 +499,12 @@ def ctl_hostname() -> str:
 @attack
 def ctl_parent_capabilities() -> str:
     def status(pid: str) -> dict[str, str]:
+        # Some lines have no value, such as "x86_Thread_features:" on x86_64.
         with open(f"/proc/{pid}/status") as f:
-            return dict(line.strip().split(":\t", 1) for line in f)
+            return {
+                key: value.strip()
+                for key, _, value in (line.partition(":") for line in f)
+            }
 
     return "CapEff " + status(status("self")["PPid"])["CapEff"]
 
