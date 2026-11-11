@@ -1,0 +1,6619 @@
+{
+ "environment": {
+  "kernel": "7.0.14-orbstack-00380-ga7e0a2dc9535",
+  "machine": "aarch64",
+  "python": "3.11.17",
+  "landlock_abi": 8
+ },
+ "matrix_runs": 2,
+ "cells_per_run": 400,
+ "failed_cells": 0,
+ "runs_identical": true,
+ "leftover_sandbox_state": [],
+ "syscall_coverage": [
+  {
+   "syscall": "mount",
+   "without": "EFAULT",
+   "with_filter": "EPERM",
+   "verdict": "the filter refused it"
+  },
+  {
+   "syscall": "umount2",
+   "without": "EFAULT",
+   "with_filter": "EPERM",
+   "verdict": "the filter refused it"
+  },
+  {
+   "syscall": "pivot_root",
+   "without": "EFAULT",
+   "with_filter": "EPERM",
+   "verdict": "the filter refused it"
+  },
+  {
+   "syscall": "open_tree",
+   "without": "EFAULT",
+   "with_filter": "EPERM",
+   "verdict": "the filter refused it"
+  },
+  {
+   "syscall": "move_mount",
+   "without": "EPERM",
+   "with_filter": "EPERM",
+   "verdict": "refused, but the kernel says the same without the filter"
+  },
+  {
+   "syscall": "fsopen",
+   "without": "EPERM",
+   "with_filter": "EPERM",
+   "verdict": "refused, but the kernel says the same without the filter"
+  },
+  {
+   "syscall": "fsconfig",
+   "without": "EINVAL",
+   "with_filter": "EPERM",
+   "verdict": "the filter refused it"
+  },
+  {
+   "syscall": "fsmount",
+   "without": "EPERM",
+   "with_filter": "EPERM",
+   "verdict": "refused, but the kernel says the same without the filter"
+  },
+  {
+   "syscall": "fspick",
+   "without": "EPERM",
+   "with_filter": "EPERM",
+   "verdict": "refused, but the kernel says the same without the filter"
+  },
+  {
+   "syscall": "mount_setattr",
+   "without": "EINVAL",
+   "with_filter": "EPERM",
+   "verdict": "the filter refused it"
+  },
+  {
+   "syscall": "ptrace",
+   "without": "no error",
+   "with_filter": "EPERM",
+   "verdict": "the filter refused it"
+  },
+  {
+   "syscall": "process_vm_readv",
+   "without": "no error",
+   "with_filter": "EPERM",
+   "verdict": "the filter refused it"
+  },
+  {
+   "syscall": "process_vm_writev",
+   "without": "no error",
+   "with_filter": "EPERM",
+   "verdict": "the filter refused it"
+  },
+  {
+   "syscall": "bpf",
+   "without": "EINVAL",
+   "with_filter": "EPERM",
+   "verdict": "the filter refused it"
+  },
+  {
+   "syscall": "keyctl",
+   "without": "EINVAL",
+   "with_filter": "EPERM",
+   "verdict": "the filter refused it"
+  },
+  {
+   "syscall": "add_key",
+   "without": "EFAULT",
+   "with_filter": "EPERM",
+   "verdict": "the filter refused it"
+  },
+  {
+   "syscall": "request_key",
+   "without": "EFAULT",
+   "with_filter": "EPERM",
+   "verdict": "the filter refused it"
+  },
+  {
+   "syscall": "io_uring_setup",
+   "without": "EFAULT",
+   "with_filter": "EPERM",
+   "verdict": "the filter refused it"
+  },
+  {
+   "syscall": "io_uring_enter",
+   "without": "ENOTSUP",
+   "with_filter": "EPERM",
+   "verdict": "the filter refused it"
+  },
+  {
+   "syscall": "io_uring_register",
+   "without": "ENOTSUP",
+   "with_filter": "EPERM",
+   "verdict": "the filter refused it"
+  },
+  {
+   "syscall": "setns",
+   "without": "EINVAL",
+   "with_filter": "EPERM",
+   "verdict": "the filter refused it"
+  },
+  {
+   "syscall": "clone3",
+   "without": "EINVAL",
+   "with_filter": "ENOSYS",
+   "verdict": "the filter refused it"
+  }
+ ],
+ "timing": {
+  "runs_per_target": 30,
+  "warm_up_runs_discarded": 3,
+  "failed_runs": 0,
+  "cpus": 14,
+  "load_average_before": 0.51904296875,
+  "load_average_after": 0.5576171875,
+  "targets": {
+   "exec only": {
+    "median_ms": 0.27,
+    "p25_ms": 0.26,
+    "p75_ms": 0.28,
+    "min_ms": 0.24,
+    "max_ms": 0.4
+   },
+   "L0": {
+    "median_ms": 25.71,
+    "p25_ms": 25.36,
+    "p75_ms": 26.22,
+    "min_ms": 25.05,
+    "max_ms": 27.88
+   },
+   "L1": {
+    "median_ms": 26.79,
+    "p25_ms": 26.49,
+    "p75_ms": 27.05,
+    "min_ms": 26.21,
+    "max_ms": 30.48
+   },
+   "L2": {
+    "median_ms": 27.31,
+    "p25_ms": 27.09,
+    "p75_ms": 27.69,
+    "min_ms": 26.7,
+    "max_ms": 37.88
+   },
+   "L3": {
+    "median_ms": 27.89,
+    "p25_ms": 27.61,
+    "p75_ms": 29.04,
+    "min_ms": 27.06,
+    "max_ms": 50.08
+   },
+   "L4": {
+    "median_ms": 28.03,
+    "p25_ms": 27.64,
+    "p75_ms": 28.8,
+    "min_ms": 27.07,
+    "max_ms": 36.3
+   },
+   "L5": {
+    "median_ms": 28.99,
+    "p25_ms": 28.78,
+    "p75_ms": 29.46,
+    "min_ms": 28.31,
+    "max_ms": 32.86
+   },
+   "L6": {
+    "median_ms": 29.86,
+    "p25_ms": 29.27,
+    "p75_ms": 30.22,
+    "min_ms": 28.87,
+    "max_ms": 37.19
+   }
+  }
+ },
+ "runs": [
+  [
+   {
+    "column": "L0",
+    "attack": "read_secret",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-AWS-KEY-3d4f05cb9359b980",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "read_secret_dotdot",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-AWS-KEY-3d4f05cb9359b980",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "read_host_tmp",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-TMP-87d82855b4b6a92c",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "write_outside",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "appended a line to /home/agent/.bashrc",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "write_read_only_path",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "wrote planted.txt in /home/agent/reference",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "write_read_only_submount",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "wrote planted.txt in /home/agent/reference/mounted",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "inherited_fd",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-AWS-KEY-3d4f05cb9359b980",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "fd_from_host_service",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-AWS-KEY-3d4f05cb9359b980",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "list_host_processes",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "1001",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "kill_host_process",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "sent SIGTERM to host PID 1001",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "sysv_shm",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-SHM-1f847b9f83e8c732",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "abstract_socket",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-HOST-SERVICE-caf09e9f0af61d02",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "direct_tcp",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-denied.test-32158c6aaa9616f8",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "proxy_denied_host",
+    "outcome": "n/a",
+    "error": null,
+    "detail": "",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "metadata_direct",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-rebind.test-4d063d9fef927cdd",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "metadata_via_proxy",
+    "outcome": "n/a",
+    "error": null,
+    "detail": "",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "mount",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "missing-target probe: ENOENT",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "userns_mount",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "uid 0 in a new user namespace mounted a tmpfs over /tmp",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "userns_unshare",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "entered a new user namespace",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "userns_clone",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "started a child in a new user namespace",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "userns_clone3",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "started a child in a new user namespace",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "file_capabilities",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "the binary ran with CapEff 0000000000000400",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "ptrace",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "attached to another process and stopped it",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "io_uring_setup",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "got a ring: anon_inode:[io_uring]",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "keyctl",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "joined a new session keyring (884325586)",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "fork_bomb",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "forked 100 processes, more than the limit of 32",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "memory_hog",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "held 256 MiB, more than the limit of 96 MiB",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "cpu_hog",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "used 1.00 of a core",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "ctl_workspace_write",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "wrote control.txt in the workspace",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "ctl_tmp_write",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "wrote and read back /tmp/control.txt: ok",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "ctl_system_read",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "PRETTY_NAME=\"Debian GNU/Linux 13 (trixie)\"",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "ctl_dev",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "read 8 random bytes",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "ctl_subprocess",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "ran",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "ctl_thread",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "ran",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "ctl_hostname",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "254c01a728ee",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "ctl_parent_capabilities",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "CapEff 0000000000000000",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "ctl_proxy_allowed",
+    "outcome": "n/a",
+    "error": null,
+    "detail": "",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "gap_env_secret",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-API-TOKEN-73703db09b40e95d",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "gap_workspace_secret",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-DOTENV-f218978c378a60b8",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "gap_git_hook",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "planted .git/hooks/pre-commit, which runs outside the sandbox on the next commit",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "read_secret",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-AWS-KEY-3d4f05cb9359b980",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "read_secret_dotdot",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-AWS-KEY-3d4f05cb9359b980",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "read_host_tmp",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-TMP-87d82855b4b6a92c",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "write_outside",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "appended a line to /home/agent/.bashrc",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "write_read_only_path",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "wrote planted.txt in /home/agent/reference",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "write_read_only_submount",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "wrote planted.txt in /home/agent/reference/mounted",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "inherited_fd",
+    "outcome": "blocked",
+    "error": "EBADF",
+    "detail": "[Errno 9] Bad file descriptor: '.aws/credentials'",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "fd_from_host_service",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-AWS-KEY-3d4f05cb9359b980",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "list_host_processes",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "1022",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "kill_host_process",
+    "outcome": "blocked",
+    "error": "ESRCH",
+    "detail": "[Errno 3] No such process",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "sysv_shm",
+    "outcome": "blocked",
+    "error": "ENOENT",
+    "detail": "[Errno 2] shmget: No such file or directory",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "abstract_socket",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-HOST-SERVICE-caf09e9f0af61d02",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "direct_tcp",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-denied.test-32158c6aaa9616f8",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "proxy_denied_host",
+    "outcome": "n/a",
+    "error": null,
+    "detail": "",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "metadata_direct",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-rebind.test-4d063d9fef927cdd",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "metadata_via_proxy",
+    "outcome": "n/a",
+    "error": null,
+    "detail": "",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "mount",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "missing-target probe: ENOENT",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "userns_mount",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "uid 0 in a new user namespace mounted a tmpfs over /tmp",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "userns_unshare",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "entered a new user namespace",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "userns_clone",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "started a child in a new user namespace",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "userns_clone3",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "started a child in a new user namespace",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "file_capabilities",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "the binary ran with CapEff 0000000000000400",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "ptrace",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "attached to another process and stopped it",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "io_uring_setup",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "got a ring: anon_inode:[io_uring]",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "keyctl",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "joined a new session keyring (881089596)",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "fork_bomb",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "forked 100 processes, more than the limit of 32",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "memory_hog",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "held 256 MiB, more than the limit of 96 MiB",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "cpu_hog",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "used 1.00 of a core",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "ctl_workspace_write",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "wrote control.txt in the workspace",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "ctl_tmp_write",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "wrote and read back /tmp/control.txt: ok",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "ctl_system_read",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "PRETTY_NAME=\"Debian GNU/Linux 13 (trixie)\"",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "ctl_dev",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "read 8 random bytes",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "ctl_subprocess",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "ran",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "ctl_thread",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "ran",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "ctl_hostname",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "sandbox",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "ctl_parent_capabilities",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "CapEff 0000000000000000",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "ctl_proxy_allowed",
+    "outcome": "n/a",
+    "error": null,
+    "detail": "",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "gap_env_secret",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-API-TOKEN-73703db09b40e95d",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "gap_workspace_secret",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-DOTENV-f218978c378a60b8",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "gap_git_hook",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "planted .git/hooks/pre-commit, which runs outside the sandbox on the next commit",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "read_secret",
+    "outcome": "blocked",
+    "error": "ENOENT",
+    "detail": "[Errno 2] No such file or directory: '/home/agent/.aws/credentials'",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "read_secret_dotdot",
+    "outcome": "blocked",
+    "error": "ENOENT",
+    "detail": "[Errno 2] No such file or directory: '/../home/agent/.aws/credentials'",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "read_host_tmp",
+    "outcome": "blocked",
+    "error": "ENOENT",
+    "detail": "[Errno 2] No such file or directory: '/tmp/host-tmp-secret'",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "write_outside",
+    "outcome": "blocked",
+    "error": "EROFS",
+    "detail": "[Errno 30] Read-only file system: '/home/agent/.bashrc'",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "write_read_only_path",
+    "outcome": "blocked",
+    "error": "EROFS",
+    "detail": "[Errno 30] Read-only file system: '/home/agent/reference/planted.txt'",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "write_read_only_submount",
+    "outcome": "blocked",
+    "error": "EROFS",
+    "detail": "[Errno 30] Read-only file system: '/home/agent/reference/mounted/planted.txt'",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "inherited_fd",
+    "outcome": "blocked",
+    "error": "EBADF",
+    "detail": "[Errno 9] Bad file descriptor: '.aws/credentials'",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "fd_from_host_service",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-AWS-KEY-3d4f05cb9359b980",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "list_host_processes",
+    "outcome": "blocked",
+    "error": "not-visible",
+    "detail": "no process in /proc carries the victim's marker",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "kill_host_process",
+    "outcome": "blocked",
+    "error": "ESRCH",
+    "detail": "[Errno 3] No such process",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "sysv_shm",
+    "outcome": "blocked",
+    "error": "ENOENT",
+    "detail": "[Errno 2] shmget: No such file or directory",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "abstract_socket",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-HOST-SERVICE-caf09e9f0af61d02",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "direct_tcp",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-denied.test-32158c6aaa9616f8",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "proxy_denied_host",
+    "outcome": "n/a",
+    "error": null,
+    "detail": "",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "metadata_direct",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-rebind.test-4d063d9fef927cdd",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "metadata_via_proxy",
+    "outcome": "n/a",
+    "error": null,
+    "detail": "",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "mount",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "missing-target probe: ENOENT",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "userns_mount",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "uid 0 in a new user namespace mounted a tmpfs over /tmp",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "userns_unshare",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "entered a new user namespace",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "userns_clone",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "started a child in a new user namespace",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "userns_clone3",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "started a child in a new user namespace",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "file_capabilities",
+    "outcome": "blocked",
+    "error": "no-capabilities",
+    "detail": "the binary ran with CapEff 0000000000000000",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "ptrace",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "attached to another process and stopped it",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "io_uring_setup",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "got a ring: anon_inode:[io_uring]",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "keyctl",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "joined a new session keyring (306790293)",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "fork_bomb",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "forked 100 processes, more than the limit of 32",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "memory_hog",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "held 256 MiB, more than the limit of 96 MiB",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "cpu_hog",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "used 1.00 of a core",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "ctl_workspace_write",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "wrote control.txt in the workspace",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "ctl_tmp_write",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "wrote and read back /tmp/control.txt: ok",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "ctl_system_read",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "PRETTY_NAME=\"Debian GNU/Linux 13 (trixie)\"",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "ctl_dev",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "read 8 random bytes",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "ctl_subprocess",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "ran",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "ctl_thread",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "ran",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "ctl_hostname",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "sandbox",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "ctl_parent_capabilities",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "CapEff 0000000000000000",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "ctl_proxy_allowed",
+    "outcome": "n/a",
+    "error": null,
+    "detail": "",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "gap_env_secret",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-API-TOKEN-73703db09b40e95d",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "gap_workspace_secret",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-DOTENV-f218978c378a60b8",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "gap_git_hook",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "planted .git/hooks/pre-commit, which runs outside the sandbox on the next commit",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "read_secret",
+    "outcome": "blocked",
+    "error": "ENOENT",
+    "detail": "[Errno 2] No such file or directory: '/home/agent/.aws/credentials'",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "read_secret_dotdot",
+    "outcome": "blocked",
+    "error": "ENOENT",
+    "detail": "[Errno 2] No such file or directory: '/../home/agent/.aws/credentials'",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "read_host_tmp",
+    "outcome": "blocked",
+    "error": "ENOENT",
+    "detail": "[Errno 2] No such file or directory: '/tmp/host-tmp-secret'",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "write_outside",
+    "outcome": "blocked",
+    "error": "EROFS",
+    "detail": "[Errno 30] Read-only file system: '/home/agent/.bashrc'",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "write_read_only_path",
+    "outcome": "blocked",
+    "error": "EROFS",
+    "detail": "[Errno 30] Read-only file system: '/home/agent/reference/planted.txt'",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "write_read_only_submount",
+    "outcome": "blocked",
+    "error": "EROFS",
+    "detail": "[Errno 30] Read-only file system: '/home/agent/reference/mounted/planted.txt'",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "inherited_fd",
+    "outcome": "blocked",
+    "error": "EBADF",
+    "detail": "[Errno 9] Bad file descriptor: '.aws/credentials'",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "fd_from_host_service",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-AWS-KEY-3d4f05cb9359b980",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "list_host_processes",
+    "outcome": "blocked",
+    "error": "not-visible",
+    "detail": "no process in /proc carries the victim's marker",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "kill_host_process",
+    "outcome": "blocked",
+    "error": "ESRCH",
+    "detail": "[Errno 3] No such process",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "sysv_shm",
+    "outcome": "blocked",
+    "error": "ENOENT",
+    "detail": "[Errno 2] shmget: No such file or directory",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "abstract_socket",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-HOST-SERVICE-caf09e9f0af61d02",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "direct_tcp",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-denied.test-32158c6aaa9616f8",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "proxy_denied_host",
+    "outcome": "n/a",
+    "error": null,
+    "detail": "",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "metadata_direct",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-rebind.test-4d063d9fef927cdd",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "metadata_via_proxy",
+    "outcome": "n/a",
+    "error": null,
+    "detail": "",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "mount",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "missing-target probe: EPERM",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "userns_mount",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] unshare: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "userns_unshare",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] unshare: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "userns_clone",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] clone: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "userns_clone3",
+    "outcome": "blocked",
+    "error": "ENOSYS",
+    "detail": "[Errno 38] clone3: Function not implemented",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "file_capabilities",
+    "outcome": "blocked",
+    "error": "no-capabilities",
+    "detail": "the binary ran with CapEff 0000000000000000",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "ptrace",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] ptrace: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "io_uring_setup",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] io_uring_setup: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "keyctl",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] keyctl: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "fork_bomb",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "forked 100 processes, more than the limit of 32",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "memory_hog",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "held 256 MiB, more than the limit of 96 MiB",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "cpu_hog",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "used 1.00 of a core",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "ctl_workspace_write",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "wrote control.txt in the workspace",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "ctl_tmp_write",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "wrote and read back /tmp/control.txt: ok",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "ctl_system_read",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "PRETTY_NAME=\"Debian GNU/Linux 13 (trixie)\"",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "ctl_dev",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "read 8 random bytes",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "ctl_subprocess",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "ran",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "ctl_thread",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "ran",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "ctl_hostname",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "sandbox",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "ctl_parent_capabilities",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "CapEff 0000000000000000",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "ctl_proxy_allowed",
+    "outcome": "n/a",
+    "error": null,
+    "detail": "",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "gap_env_secret",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-API-TOKEN-73703db09b40e95d",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "gap_workspace_secret",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-DOTENV-f218978c378a60b8",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "gap_git_hook",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "planted .git/hooks/pre-commit, which runs outside the sandbox on the next commit",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "read_secret",
+    "outcome": "blocked",
+    "error": "ENOENT",
+    "detail": "[Errno 2] No such file or directory: '/home/agent/.aws/credentials'",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "read_secret_dotdot",
+    "outcome": "blocked",
+    "error": "ENOENT",
+    "detail": "[Errno 2] No such file or directory: '/../home/agent/.aws/credentials'",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "read_host_tmp",
+    "outcome": "blocked",
+    "error": "ENOENT",
+    "detail": "[Errno 2] No such file or directory: '/tmp/host-tmp-secret'",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "write_outside",
+    "outcome": "blocked",
+    "error": "EROFS",
+    "detail": "[Errno 30] Read-only file system: '/home/agent/.bashrc'",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "write_read_only_path",
+    "outcome": "blocked",
+    "error": "EROFS",
+    "detail": "[Errno 30] Read-only file system: '/home/agent/reference/planted.txt'",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "write_read_only_submount",
+    "outcome": "blocked",
+    "error": "EROFS",
+    "detail": "[Errno 30] Read-only file system: '/home/agent/reference/mounted/planted.txt'",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "inherited_fd",
+    "outcome": "blocked",
+    "error": "EBADF",
+    "detail": "[Errno 9] Bad file descriptor: '.aws/credentials'",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "fd_from_host_service",
+    "outcome": "blocked",
+    "error": "EACCES",
+    "detail": "[Errno 13] Permission denied: '.aws/credentials'",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "list_host_processes",
+    "outcome": "blocked",
+    "error": "not-visible",
+    "detail": "no process in /proc carries the victim's marker",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "kill_host_process",
+    "outcome": "blocked",
+    "error": "ESRCH",
+    "detail": "[Errno 3] No such process",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "sysv_shm",
+    "outcome": "blocked",
+    "error": "ENOENT",
+    "detail": "[Errno 2] shmget: No such file or directory",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "abstract_socket",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-HOST-SERVICE-caf09e9f0af61d02",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "direct_tcp",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-denied.test-32158c6aaa9616f8",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "proxy_denied_host",
+    "outcome": "n/a",
+    "error": null,
+    "detail": "",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "metadata_direct",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-rebind.test-4d063d9fef927cdd",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "metadata_via_proxy",
+    "outcome": "n/a",
+    "error": null,
+    "detail": "",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "mount",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "missing-target probe: EPERM",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "userns_mount",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] unshare: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "userns_unshare",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] unshare: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "userns_clone",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] clone: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "userns_clone3",
+    "outcome": "blocked",
+    "error": "ENOSYS",
+    "detail": "[Errno 38] clone3: Function not implemented",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "file_capabilities",
+    "outcome": "blocked",
+    "error": "no-capabilities",
+    "detail": "the binary ran with CapEff 0000000000000000",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "ptrace",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] ptrace: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "io_uring_setup",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] io_uring_setup: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "keyctl",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] keyctl: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "fork_bomb",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "forked 100 processes, more than the limit of 32",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "memory_hog",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "held 256 MiB, more than the limit of 96 MiB",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "cpu_hog",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "used 0.99 of a core",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "ctl_workspace_write",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "wrote control.txt in the workspace",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "ctl_tmp_write",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "wrote and read back /tmp/control.txt: ok",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "ctl_system_read",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "PRETTY_NAME=\"Debian GNU/Linux 13 (trixie)\"",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "ctl_dev",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "read 8 random bytes",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "ctl_subprocess",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "ran",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "ctl_thread",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "ran",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "ctl_hostname",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "sandbox",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "ctl_parent_capabilities",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "CapEff 0000000000000000",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "ctl_proxy_allowed",
+    "outcome": "n/a",
+    "error": null,
+    "detail": "",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "gap_env_secret",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-API-TOKEN-73703db09b40e95d",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "gap_workspace_secret",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-DOTENV-f218978c378a60b8",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "gap_git_hook",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "planted .git/hooks/pre-commit, which runs outside the sandbox on the next commit",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "read_secret",
+    "outcome": "blocked",
+    "error": "ENOENT",
+    "detail": "[Errno 2] No such file or directory: '/home/agent/.aws/credentials'",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "read_secret_dotdot",
+    "outcome": "blocked",
+    "error": "ENOENT",
+    "detail": "[Errno 2] No such file or directory: '/../home/agent/.aws/credentials'",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "read_host_tmp",
+    "outcome": "blocked",
+    "error": "ENOENT",
+    "detail": "[Errno 2] No such file or directory: '/tmp/host-tmp-secret'",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "write_outside",
+    "outcome": "blocked",
+    "error": "EROFS",
+    "detail": "[Errno 30] Read-only file system: '/home/agent/.bashrc'",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "write_read_only_path",
+    "outcome": "blocked",
+    "error": "EROFS",
+    "detail": "[Errno 30] Read-only file system: '/home/agent/reference/planted.txt'",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "write_read_only_submount",
+    "outcome": "blocked",
+    "error": "EROFS",
+    "detail": "[Errno 30] Read-only file system: '/home/agent/reference/mounted/planted.txt'",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "inherited_fd",
+    "outcome": "blocked",
+    "error": "EBADF",
+    "detail": "[Errno 9] Bad file descriptor: '.aws/credentials'",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "fd_from_host_service",
+    "outcome": "blocked",
+    "error": "ECONNREFUSED",
+    "detail": "[Errno 111] Connection refused",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "list_host_processes",
+    "outcome": "blocked",
+    "error": "not-visible",
+    "detail": "no process in /proc carries the victim's marker",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "kill_host_process",
+    "outcome": "blocked",
+    "error": "ESRCH",
+    "detail": "[Errno 3] No such process",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "sysv_shm",
+    "outcome": "blocked",
+    "error": "ENOENT",
+    "detail": "[Errno 2] shmget: No such file or directory",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "abstract_socket",
+    "outcome": "blocked",
+    "error": "ECONNREFUSED",
+    "detail": "[Errno 111] Connection refused",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "direct_tcp",
+    "outcome": "blocked",
+    "error": "ENETUNREACH",
+    "detail": "[Errno 101] Network is unreachable",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "proxy_denied_host",
+    "outcome": "blocked",
+    "error": "403 host-not-allowed",
+    "detail": "",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "metadata_direct",
+    "outcome": "blocked",
+    "error": "ENETUNREACH",
+    "detail": "[Errno 101] Network is unreachable",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "metadata_via_proxy",
+    "outcome": "blocked",
+    "error": "403 address-denied",
+    "detail": "",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "mount",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "missing-target probe: EPERM",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "userns_mount",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] unshare: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "userns_unshare",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] unshare: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "userns_clone",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] clone: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "userns_clone3",
+    "outcome": "blocked",
+    "error": "ENOSYS",
+    "detail": "[Errno 38] clone3: Function not implemented",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "file_capabilities",
+    "outcome": "blocked",
+    "error": "no-capabilities",
+    "detail": "the binary ran with CapEff 0000000000000000",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "ptrace",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] ptrace: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "io_uring_setup",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] io_uring_setup: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "keyctl",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] keyctl: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "fork_bomb",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "forked 100 processes, more than the limit of 32",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "memory_hog",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "held 256 MiB, more than the limit of 96 MiB",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "cpu_hog",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "used 1.00 of a core",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "ctl_workspace_write",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "wrote control.txt in the workspace",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "ctl_tmp_write",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "wrote and read back /tmp/control.txt: ok",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "ctl_system_read",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "PRETTY_NAME=\"Debian GNU/Linux 13 (trixie)\"",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "ctl_dev",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "read 8 random bytes",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "ctl_subprocess",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "ran",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "ctl_thread",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "ran",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "ctl_hostname",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "sandbox",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "ctl_parent_capabilities",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "CapEff 0000000000000000",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "ctl_proxy_allowed",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-allowed.test-8f874993e7862d41",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "gap_env_secret",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-API-TOKEN-73703db09b40e95d",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "gap_workspace_secret",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-DOTENV-f218978c378a60b8",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "gap_git_hook",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "planted .git/hooks/pre-commit, which runs outside the sandbox on the next commit",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "read_secret",
+    "outcome": "blocked",
+    "error": "ENOENT",
+    "detail": "[Errno 2] No such file or directory: '/home/agent/.aws/credentials'",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "read_secret_dotdot",
+    "outcome": "blocked",
+    "error": "ENOENT",
+    "detail": "[Errno 2] No such file or directory: '/../home/agent/.aws/credentials'",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "read_host_tmp",
+    "outcome": "blocked",
+    "error": "ENOENT",
+    "detail": "[Errno 2] No such file or directory: '/tmp/host-tmp-secret'",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "write_outside",
+    "outcome": "blocked",
+    "error": "EROFS",
+    "detail": "[Errno 30] Read-only file system: '/home/agent/.bashrc'",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "write_read_only_path",
+    "outcome": "blocked",
+    "error": "EROFS",
+    "detail": "[Errno 30] Read-only file system: '/home/agent/reference/planted.txt'",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "write_read_only_submount",
+    "outcome": "blocked",
+    "error": "EROFS",
+    "detail": "[Errno 30] Read-only file system: '/home/agent/reference/mounted/planted.txt'",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "inherited_fd",
+    "outcome": "blocked",
+    "error": "EBADF",
+    "detail": "[Errno 9] Bad file descriptor: '.aws/credentials'",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "fd_from_host_service",
+    "outcome": "blocked",
+    "error": "ECONNREFUSED",
+    "detail": "[Errno 111] Connection refused",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "list_host_processes",
+    "outcome": "blocked",
+    "error": "not-visible",
+    "detail": "no process in /proc carries the victim's marker",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "kill_host_process",
+    "outcome": "blocked",
+    "error": "ESRCH",
+    "detail": "[Errno 3] No such process",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "sysv_shm",
+    "outcome": "blocked",
+    "error": "ENOENT",
+    "detail": "[Errno 2] shmget: No such file or directory",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "abstract_socket",
+    "outcome": "blocked",
+    "error": "ECONNREFUSED",
+    "detail": "[Errno 111] Connection refused",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "direct_tcp",
+    "outcome": "blocked",
+    "error": "ENETUNREACH",
+    "detail": "[Errno 101] Network is unreachable",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "proxy_denied_host",
+    "outcome": "blocked",
+    "error": "403 host-not-allowed",
+    "detail": "",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "metadata_direct",
+    "outcome": "blocked",
+    "error": "ENETUNREACH",
+    "detail": "[Errno 101] Network is unreachable",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "metadata_via_proxy",
+    "outcome": "blocked",
+    "error": "403 address-denied",
+    "detail": "",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "mount",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "missing-target probe: EPERM",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "userns_mount",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] unshare: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "userns_unshare",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] unshare: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "userns_clone",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] clone: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "userns_clone3",
+    "outcome": "blocked",
+    "error": "ENOSYS",
+    "detail": "[Errno 38] clone3: Function not implemented",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "file_capabilities",
+    "outcome": "blocked",
+    "error": "no-capabilities",
+    "detail": "the binary ran with CapEff 0000000000000000",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "ptrace",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] ptrace: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "io_uring_setup",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] io_uring_setup: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "keyctl",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] keyctl: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "fork_bomb",
+    "outcome": "blocked",
+    "error": "EAGAIN",
+    "detail": "fork 29 failed",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "memory_hog",
+    "outcome": "blocked",
+    "error": "SIGKILL",
+    "detail": "killed holding 81 MiB",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "cpu_hog",
+    "outcome": "blocked",
+    "error": "throttled",
+    "detail": "got 0.49 of a core",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "ctl_workspace_write",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "wrote control.txt in the workspace",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "ctl_tmp_write",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "wrote and read back /tmp/control.txt: ok",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "ctl_system_read",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "PRETTY_NAME=\"Debian GNU/Linux 13 (trixie)\"",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "ctl_dev",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "read 8 random bytes",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "ctl_subprocess",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "ran",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "ctl_thread",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "ran",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "ctl_hostname",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "sandbox",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "ctl_parent_capabilities",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "CapEff 0000000000000000",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "ctl_proxy_allowed",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-allowed.test-8f874993e7862d41",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "gap_env_secret",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-API-TOKEN-73703db09b40e95d",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "gap_workspace_secret",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-DOTENV-f218978c378a60b8",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "gap_git_hook",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "planted .git/hooks/pre-commit, which runs outside the sandbox on the next commit",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "read_secret",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-AWS-KEY-3d4f05cb9359b980",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "read_secret_dotdot",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-AWS-KEY-3d4f05cb9359b980",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "read_host_tmp",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-TMP-87d82855b4b6a92c",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "write_outside",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "appended a line to /home/agent/.bashrc",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "write_read_only_path",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "wrote planted.txt in /home/agent/reference",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "write_read_only_submount",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "wrote planted.txt in /home/agent/reference/mounted",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "inherited_fd",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-AWS-KEY-3d4f05cb9359b980",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "fd_from_host_service",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-AWS-KEY-3d4f05cb9359b980",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "list_host_processes",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "1022",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "kill_host_process",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "sent SIGTERM to host PID 1022",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "sysv_shm",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-SHM-1f847b9f83e8c732",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "abstract_socket",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-HOST-SERVICE-caf09e9f0af61d02",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "direct_tcp",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-denied.test-32158c6aaa9616f8",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "proxy_denied_host",
+    "outcome": "n/a",
+    "error": null,
+    "detail": "",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "metadata_direct",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-rebind.test-4d063d9fef927cdd",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "metadata_via_proxy",
+    "outcome": "n/a",
+    "error": null,
+    "detail": "",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "mount",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "missing-target probe: EPERM",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "userns_mount",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] unshare: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "userns_unshare",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] unshare: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "userns_clone",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] clone: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "userns_clone3",
+    "outcome": "blocked",
+    "error": "ENOSYS",
+    "detail": "[Errno 38] clone3: Function not implemented",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "file_capabilities",
+    "outcome": "blocked",
+    "error": "no-capabilities",
+    "detail": "the binary ran with CapEff 0000000000000000",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "ptrace",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] ptrace: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "io_uring_setup",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] io_uring_setup: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "keyctl",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] keyctl: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "fork_bomb",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "forked 100 processes, more than the limit of 32",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "memory_hog",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "held 256 MiB, more than the limit of 96 MiB",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "cpu_hog",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "used 1.00 of a core",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "ctl_workspace_write",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "wrote control.txt in the workspace",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "ctl_tmp_write",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "wrote and read back /tmp/control.txt: ok",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "ctl_system_read",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "PRETTY_NAME=\"Debian GNU/Linux 13 (trixie)\"",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "ctl_dev",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "read 8 random bytes",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "ctl_subprocess",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "ran",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "ctl_thread",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "ran",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "ctl_hostname",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "254c01a728ee",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "ctl_parent_capabilities",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "CapEff 0000000000000000",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "ctl_proxy_allowed",
+    "outcome": "n/a",
+    "error": null,
+    "detail": "",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "gap_env_secret",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-API-TOKEN-73703db09b40e95d",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "gap_workspace_secret",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-DOTENV-f218978c378a60b8",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "gap_git_hook",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "planted .git/hooks/pre-commit, which runs outside the sandbox on the next commit",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "read_secret",
+    "outcome": "blocked",
+    "error": "EACCES",
+    "detail": "[Errno 13] Permission denied: '/home/agent/.aws/credentials'",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "read_secret_dotdot",
+    "outcome": "blocked",
+    "error": "EACCES",
+    "detail": "[Errno 13] Permission denied: '/../home/agent/.aws/credentials'",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "read_host_tmp",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-TMP-87d82855b4b6a92c",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "write_outside",
+    "outcome": "blocked",
+    "error": "EACCES",
+    "detail": "[Errno 13] Permission denied: '/home/agent/.bashrc'",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "write_read_only_path",
+    "outcome": "blocked",
+    "error": "EACCES",
+    "detail": "[Errno 13] Permission denied: '/home/agent/reference/planted.txt'",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "write_read_only_submount",
+    "outcome": "blocked",
+    "error": "EACCES",
+    "detail": "[Errno 13] Permission denied: '/home/agent/reference/mounted/planted.txt'",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "inherited_fd",
+    "outcome": "blocked",
+    "error": "EACCES",
+    "detail": "[Errno 13] Permission denied: '.aws/credentials'",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "fd_from_host_service",
+    "outcome": "blocked",
+    "error": "EACCES",
+    "detail": "[Errno 13] Permission denied: '.aws/credentials'",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "list_host_processes",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "2938",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "kill_host_process",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "sent SIGTERM to host PID 2938",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "sysv_shm",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-SHM-1f847b9f83e8c732",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "abstract_socket",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-HOST-SERVICE-caf09e9f0af61d02",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "direct_tcp",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-denied.test-32158c6aaa9616f8",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "proxy_denied_host",
+    "outcome": "n/a",
+    "error": null,
+    "detail": "",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "metadata_direct",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-rebind.test-4d063d9fef927cdd",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "metadata_via_proxy",
+    "outcome": "n/a",
+    "error": null,
+    "detail": "",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "mount",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "missing-target probe: ENOENT",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "userns_mount",
+    "outcome": "blocked",
+    "error": "EACCES",
+    "detail": "[Errno 13] Permission denied: '/proc/self/uid_map'",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "userns_unshare",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "entered a new user namespace",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "userns_clone",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "started a child in a new user namespace",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "userns_clone3",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "started a child in a new user namespace",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "file_capabilities",
+    "outcome": "blocked",
+    "error": "no-capabilities",
+    "detail": "the binary ran with CapEff 0000000000000000",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "ptrace",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "attached to another process and stopped it",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "io_uring_setup",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "got a ring: anon_inode:[io_uring]",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "keyctl",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "joined a new session keyring (812931227)",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "fork_bomb",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "forked 100 processes, more than the limit of 32",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "memory_hog",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "held 256 MiB, more than the limit of 96 MiB",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "cpu_hog",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "used 1.00 of a core",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "ctl_workspace_write",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "wrote control.txt in the workspace",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "ctl_tmp_write",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "wrote and read back /tmp/control.txt: ok",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "ctl_system_read",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "PRETTY_NAME=\"Debian GNU/Linux 13 (trixie)\"",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "ctl_dev",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "read 8 random bytes",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "ctl_subprocess",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "ran",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "ctl_thread",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "ran",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "ctl_hostname",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "254c01a728ee",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "ctl_parent_capabilities",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "CapEff 0000000000000000",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "ctl_proxy_allowed",
+    "outcome": "n/a",
+    "error": null,
+    "detail": "",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "gap_env_secret",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-API-TOKEN-73703db09b40e95d",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "gap_workspace_secret",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-DOTENV-f218978c378a60b8",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "gap_git_hook",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "planted .git/hooks/pre-commit, which runs outside the sandbox on the next commit",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "read_secret",
+    "outcome": "blocked",
+    "error": "ENOENT",
+    "detail": "[Errno 2] No such file or directory: '/home/agent/.aws/credentials'",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "read_secret_dotdot",
+    "outcome": "blocked",
+    "error": "ENOENT",
+    "detail": "[Errno 2] No such file or directory: '/../home/agent/.aws/credentials'",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "read_host_tmp",
+    "outcome": "blocked",
+    "error": "ENOENT",
+    "detail": "[Errno 2] No such file or directory: '/tmp/host-tmp-secret'",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "write_outside",
+    "outcome": "blocked",
+    "error": "EROFS",
+    "detail": "[Errno 30] Read-only file system: '/home/agent/.bashrc'",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "write_read_only_path",
+    "outcome": "blocked",
+    "error": "EROFS",
+    "detail": "[Errno 30] Read-only file system: '/home/agent/reference/planted.txt'",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "write_read_only_submount",
+    "outcome": "blocked",
+    "error": "EROFS",
+    "detail": "[Errno 30] Read-only file system: '/home/agent/reference/mounted/planted.txt'",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "inherited_fd",
+    "outcome": "blocked",
+    "error": "EBADF",
+    "detail": "[Errno 9] Bad file descriptor: '.aws/credentials'",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "fd_from_host_service",
+    "outcome": "blocked",
+    "error": "ECONNREFUSED",
+    "detail": "[Errno 111] Connection refused",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "list_host_processes",
+    "outcome": "blocked",
+    "error": "not-visible",
+    "detail": "no process in /proc carries the victim's marker",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "kill_host_process",
+    "outcome": "blocked",
+    "error": "ESRCH",
+    "detail": "[Errno 3] No such process",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "sysv_shm",
+    "outcome": "blocked",
+    "error": "ENOENT",
+    "detail": "[Errno 2] shmget: No such file or directory",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "abstract_socket",
+    "outcome": "blocked",
+    "error": "ECONNREFUSED",
+    "detail": "[Errno 111] Connection refused",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "direct_tcp",
+    "outcome": "blocked",
+    "error": "ENETUNREACH",
+    "detail": "[Errno 101] Network is unreachable",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "proxy_denied_host",
+    "outcome": "blocked",
+    "error": "403 host-not-allowed",
+    "detail": "",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "metadata_direct",
+    "outcome": "blocked",
+    "error": "ENETUNREACH",
+    "detail": "[Errno 101] Network is unreachable",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "metadata_via_proxy",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-rebind.test-4d063d9fef927cdd",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "mount",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "missing-target probe: EPERM",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "userns_mount",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] unshare: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "userns_unshare",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] unshare: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "userns_clone",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] clone: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "userns_clone3",
+    "outcome": "blocked",
+    "error": "ENOSYS",
+    "detail": "[Errno 38] clone3: Function not implemented",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "file_capabilities",
+    "outcome": "blocked",
+    "error": "no-capabilities",
+    "detail": "the binary ran with CapEff 0000000000000000",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "ptrace",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] ptrace: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "io_uring_setup",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] io_uring_setup: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "keyctl",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] keyctl: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "fork_bomb",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "forked 100 processes, more than the limit of 32",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "memory_hog",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "held 256 MiB, more than the limit of 96 MiB",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "cpu_hog",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "used 1.00 of a core",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "ctl_workspace_write",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "wrote control.txt in the workspace",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "ctl_tmp_write",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "wrote and read back /tmp/control.txt: ok",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "ctl_system_read",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "PRETTY_NAME=\"Debian GNU/Linux 13 (trixie)\"",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "ctl_dev",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "read 8 random bytes",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "ctl_subprocess",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "ran",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "ctl_thread",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "ran",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "ctl_hostname",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "sandbox",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "ctl_parent_capabilities",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "CapEff 0000000000000000",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "ctl_proxy_allowed",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-allowed.test-8f874993e7862d41",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "gap_env_secret",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-API-TOKEN-73703db09b40e95d",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "gap_workspace_secret",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-DOTENV-f218978c378a60b8",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "gap_git_hook",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "planted .git/hooks/pre-commit, which runs outside the sandbox on the next commit",
+    "problems": []
+   }
+  ],
+  [
+   {
+    "column": "L0",
+    "attack": "read_secret",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-AWS-KEY-3d4f05cb9359b980",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "read_secret_dotdot",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-AWS-KEY-3d4f05cb9359b980",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "read_host_tmp",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-TMP-87d82855b4b6a92c",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "write_outside",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "appended a line to /home/agent/.bashrc",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "write_read_only_path",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "wrote planted.txt in /home/agent/reference",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "write_read_only_submount",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "wrote planted.txt in /home/agent/reference/mounted",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "inherited_fd",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-AWS-KEY-3d4f05cb9359b980",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "fd_from_host_service",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-AWS-KEY-3d4f05cb9359b980",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "list_host_processes",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "3129",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "kill_host_process",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "sent SIGTERM to host PID 3129",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "sysv_shm",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-SHM-1f847b9f83e8c732",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "abstract_socket",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-HOST-SERVICE-caf09e9f0af61d02",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "direct_tcp",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-denied.test-32158c6aaa9616f8",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "proxy_denied_host",
+    "outcome": "n/a",
+    "error": null,
+    "detail": "",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "metadata_direct",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-rebind.test-4d063d9fef927cdd",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "metadata_via_proxy",
+    "outcome": "n/a",
+    "error": null,
+    "detail": "",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "mount",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "missing-target probe: ENOENT",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "userns_mount",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "uid 0 in a new user namespace mounted a tmpfs over /tmp",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "userns_unshare",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "entered a new user namespace",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "userns_clone",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "started a child in a new user namespace",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "userns_clone3",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "started a child in a new user namespace",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "file_capabilities",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "the binary ran with CapEff 0000000000000400",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "ptrace",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "attached to another process and stopped it",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "io_uring_setup",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "got a ring: anon_inode:[io_uring]",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "keyctl",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "joined a new session keyring (161687200)",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "fork_bomb",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "forked 100 processes, more than the limit of 32",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "memory_hog",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "held 256 MiB, more than the limit of 96 MiB",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "cpu_hog",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "used 0.99 of a core",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "ctl_workspace_write",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "wrote control.txt in the workspace",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "ctl_tmp_write",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "wrote and read back /tmp/control.txt: ok",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "ctl_system_read",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "PRETTY_NAME=\"Debian GNU/Linux 13 (trixie)\"",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "ctl_dev",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "read 8 random bytes",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "ctl_subprocess",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "ran",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "ctl_thread",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "ran",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "ctl_hostname",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "254c01a728ee",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "ctl_parent_capabilities",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "CapEff 0000000000000000",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "ctl_proxy_allowed",
+    "outcome": "n/a",
+    "error": null,
+    "detail": "",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "gap_env_secret",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-API-TOKEN-73703db09b40e95d",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "gap_workspace_secret",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-DOTENV-f218978c378a60b8",
+    "problems": []
+   },
+   {
+    "column": "L0",
+    "attack": "gap_git_hook",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "planted .git/hooks/pre-commit, which runs outside the sandbox on the next commit",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "read_secret",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-AWS-KEY-3d4f05cb9359b980",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "read_secret_dotdot",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-AWS-KEY-3d4f05cb9359b980",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "read_host_tmp",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-TMP-87d82855b4b6a92c",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "write_outside",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "appended a line to /home/agent/.bashrc",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "write_read_only_path",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "wrote planted.txt in /home/agent/reference",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "write_read_only_submount",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "wrote planted.txt in /home/agent/reference/mounted",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "inherited_fd",
+    "outcome": "blocked",
+    "error": "EBADF",
+    "detail": "[Errno 9] Bad file descriptor: '.aws/credentials'",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "fd_from_host_service",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-AWS-KEY-3d4f05cb9359b980",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "list_host_processes",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "3678",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "kill_host_process",
+    "outcome": "blocked",
+    "error": "ESRCH",
+    "detail": "[Errno 3] No such process",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "sysv_shm",
+    "outcome": "blocked",
+    "error": "ENOENT",
+    "detail": "[Errno 2] shmget: No such file or directory",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "abstract_socket",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-HOST-SERVICE-caf09e9f0af61d02",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "direct_tcp",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-denied.test-32158c6aaa9616f8",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "proxy_denied_host",
+    "outcome": "n/a",
+    "error": null,
+    "detail": "",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "metadata_direct",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-rebind.test-4d063d9fef927cdd",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "metadata_via_proxy",
+    "outcome": "n/a",
+    "error": null,
+    "detail": "",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "mount",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "missing-target probe: ENOENT",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "userns_mount",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "uid 0 in a new user namespace mounted a tmpfs over /tmp",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "userns_unshare",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "entered a new user namespace",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "userns_clone",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "started a child in a new user namespace",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "userns_clone3",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "started a child in a new user namespace",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "file_capabilities",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "the binary ran with CapEff 0000000000000400",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "ptrace",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "attached to another process and stopped it",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "io_uring_setup",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "got a ring: anon_inode:[io_uring]",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "keyctl",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "joined a new session keyring (1052968008)",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "fork_bomb",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "forked 100 processes, more than the limit of 32",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "memory_hog",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "held 256 MiB, more than the limit of 96 MiB",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "cpu_hog",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "used 1.00 of a core",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "ctl_workspace_write",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "wrote control.txt in the workspace",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "ctl_tmp_write",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "wrote and read back /tmp/control.txt: ok",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "ctl_system_read",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "PRETTY_NAME=\"Debian GNU/Linux 13 (trixie)\"",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "ctl_dev",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "read 8 random bytes",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "ctl_subprocess",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "ran",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "ctl_thread",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "ran",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "ctl_hostname",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "sandbox",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "ctl_parent_capabilities",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "CapEff 0000000000000000",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "ctl_proxy_allowed",
+    "outcome": "n/a",
+    "error": null,
+    "detail": "",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "gap_env_secret",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-API-TOKEN-73703db09b40e95d",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "gap_workspace_secret",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-DOTENV-f218978c378a60b8",
+    "problems": []
+   },
+   {
+    "column": "L1",
+    "attack": "gap_git_hook",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "planted .git/hooks/pre-commit, which runs outside the sandbox on the next commit",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "read_secret",
+    "outcome": "blocked",
+    "error": "ENOENT",
+    "detail": "[Errno 2] No such file or directory: '/home/agent/.aws/credentials'",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "read_secret_dotdot",
+    "outcome": "blocked",
+    "error": "ENOENT",
+    "detail": "[Errno 2] No such file or directory: '/../home/agent/.aws/credentials'",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "read_host_tmp",
+    "outcome": "blocked",
+    "error": "ENOENT",
+    "detail": "[Errno 2] No such file or directory: '/tmp/host-tmp-secret'",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "write_outside",
+    "outcome": "blocked",
+    "error": "EROFS",
+    "detail": "[Errno 30] Read-only file system: '/home/agent/.bashrc'",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "write_read_only_path",
+    "outcome": "blocked",
+    "error": "EROFS",
+    "detail": "[Errno 30] Read-only file system: '/home/agent/reference/planted.txt'",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "write_read_only_submount",
+    "outcome": "blocked",
+    "error": "EROFS",
+    "detail": "[Errno 30] Read-only file system: '/home/agent/reference/mounted/planted.txt'",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "inherited_fd",
+    "outcome": "blocked",
+    "error": "EBADF",
+    "detail": "[Errno 9] Bad file descriptor: '.aws/credentials'",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "fd_from_host_service",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-AWS-KEY-3d4f05cb9359b980",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "list_host_processes",
+    "outcome": "blocked",
+    "error": "not-visible",
+    "detail": "no process in /proc carries the victim's marker",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "kill_host_process",
+    "outcome": "blocked",
+    "error": "ESRCH",
+    "detail": "[Errno 3] No such process",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "sysv_shm",
+    "outcome": "blocked",
+    "error": "ENOENT",
+    "detail": "[Errno 2] shmget: No such file or directory",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "abstract_socket",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-HOST-SERVICE-caf09e9f0af61d02",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "direct_tcp",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-denied.test-32158c6aaa9616f8",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "proxy_denied_host",
+    "outcome": "n/a",
+    "error": null,
+    "detail": "",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "metadata_direct",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-rebind.test-4d063d9fef927cdd",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "metadata_via_proxy",
+    "outcome": "n/a",
+    "error": null,
+    "detail": "",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "mount",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "missing-target probe: ENOENT",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "userns_mount",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "uid 0 in a new user namespace mounted a tmpfs over /tmp",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "userns_unshare",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "entered a new user namespace",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "userns_clone",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "started a child in a new user namespace",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "userns_clone3",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "started a child in a new user namespace",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "file_capabilities",
+    "outcome": "blocked",
+    "error": "no-capabilities",
+    "detail": "the binary ran with CapEff 0000000000000000",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "ptrace",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "attached to another process and stopped it",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "io_uring_setup",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "got a ring: anon_inode:[io_uring]",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "keyctl",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "joined a new session keyring (361665993)",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "fork_bomb",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "forked 100 processes, more than the limit of 32",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "memory_hog",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "held 256 MiB, more than the limit of 96 MiB",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "cpu_hog",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "used 1.00 of a core",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "ctl_workspace_write",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "wrote control.txt in the workspace",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "ctl_tmp_write",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "wrote and read back /tmp/control.txt: ok",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "ctl_system_read",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "PRETTY_NAME=\"Debian GNU/Linux 13 (trixie)\"",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "ctl_dev",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "read 8 random bytes",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "ctl_subprocess",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "ran",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "ctl_thread",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "ran",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "ctl_hostname",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "sandbox",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "ctl_parent_capabilities",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "CapEff 0000000000000000",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "ctl_proxy_allowed",
+    "outcome": "n/a",
+    "error": null,
+    "detail": "",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "gap_env_secret",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-API-TOKEN-73703db09b40e95d",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "gap_workspace_secret",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-DOTENV-f218978c378a60b8",
+    "problems": []
+   },
+   {
+    "column": "L2",
+    "attack": "gap_git_hook",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "planted .git/hooks/pre-commit, which runs outside the sandbox on the next commit",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "read_secret",
+    "outcome": "blocked",
+    "error": "ENOENT",
+    "detail": "[Errno 2] No such file or directory: '/home/agent/.aws/credentials'",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "read_secret_dotdot",
+    "outcome": "blocked",
+    "error": "ENOENT",
+    "detail": "[Errno 2] No such file or directory: '/../home/agent/.aws/credentials'",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "read_host_tmp",
+    "outcome": "blocked",
+    "error": "ENOENT",
+    "detail": "[Errno 2] No such file or directory: '/tmp/host-tmp-secret'",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "write_outside",
+    "outcome": "blocked",
+    "error": "EROFS",
+    "detail": "[Errno 30] Read-only file system: '/home/agent/.bashrc'",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "write_read_only_path",
+    "outcome": "blocked",
+    "error": "EROFS",
+    "detail": "[Errno 30] Read-only file system: '/home/agent/reference/planted.txt'",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "write_read_only_submount",
+    "outcome": "blocked",
+    "error": "EROFS",
+    "detail": "[Errno 30] Read-only file system: '/home/agent/reference/mounted/planted.txt'",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "inherited_fd",
+    "outcome": "blocked",
+    "error": "EBADF",
+    "detail": "[Errno 9] Bad file descriptor: '.aws/credentials'",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "fd_from_host_service",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-AWS-KEY-3d4f05cb9359b980",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "list_host_processes",
+    "outcome": "blocked",
+    "error": "not-visible",
+    "detail": "no process in /proc carries the victim's marker",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "kill_host_process",
+    "outcome": "blocked",
+    "error": "ESRCH",
+    "detail": "[Errno 3] No such process",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "sysv_shm",
+    "outcome": "blocked",
+    "error": "ENOENT",
+    "detail": "[Errno 2] shmget: No such file or directory",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "abstract_socket",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-HOST-SERVICE-caf09e9f0af61d02",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "direct_tcp",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-denied.test-32158c6aaa9616f8",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "proxy_denied_host",
+    "outcome": "n/a",
+    "error": null,
+    "detail": "",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "metadata_direct",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-rebind.test-4d063d9fef927cdd",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "metadata_via_proxy",
+    "outcome": "n/a",
+    "error": null,
+    "detail": "",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "mount",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "missing-target probe: EPERM",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "userns_mount",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] unshare: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "userns_unshare",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] unshare: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "userns_clone",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] clone: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "userns_clone3",
+    "outcome": "blocked",
+    "error": "ENOSYS",
+    "detail": "[Errno 38] clone3: Function not implemented",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "file_capabilities",
+    "outcome": "blocked",
+    "error": "no-capabilities",
+    "detail": "the binary ran with CapEff 0000000000000000",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "ptrace",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] ptrace: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "io_uring_setup",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] io_uring_setup: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "keyctl",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] keyctl: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "fork_bomb",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "forked 100 processes, more than the limit of 32",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "memory_hog",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "held 256 MiB, more than the limit of 96 MiB",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "cpu_hog",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "used 1.00 of a core",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "ctl_workspace_write",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "wrote control.txt in the workspace",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "ctl_tmp_write",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "wrote and read back /tmp/control.txt: ok",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "ctl_system_read",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "PRETTY_NAME=\"Debian GNU/Linux 13 (trixie)\"",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "ctl_dev",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "read 8 random bytes",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "ctl_subprocess",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "ran",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "ctl_thread",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "ran",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "ctl_hostname",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "sandbox",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "ctl_parent_capabilities",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "CapEff 0000000000000000",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "ctl_proxy_allowed",
+    "outcome": "n/a",
+    "error": null,
+    "detail": "",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "gap_env_secret",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-API-TOKEN-73703db09b40e95d",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "gap_workspace_secret",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-DOTENV-f218978c378a60b8",
+    "problems": []
+   },
+   {
+    "column": "L3",
+    "attack": "gap_git_hook",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "planted .git/hooks/pre-commit, which runs outside the sandbox on the next commit",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "read_secret",
+    "outcome": "blocked",
+    "error": "ENOENT",
+    "detail": "[Errno 2] No such file or directory: '/home/agent/.aws/credentials'",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "read_secret_dotdot",
+    "outcome": "blocked",
+    "error": "ENOENT",
+    "detail": "[Errno 2] No such file or directory: '/../home/agent/.aws/credentials'",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "read_host_tmp",
+    "outcome": "blocked",
+    "error": "ENOENT",
+    "detail": "[Errno 2] No such file or directory: '/tmp/host-tmp-secret'",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "write_outside",
+    "outcome": "blocked",
+    "error": "EROFS",
+    "detail": "[Errno 30] Read-only file system: '/home/agent/.bashrc'",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "write_read_only_path",
+    "outcome": "blocked",
+    "error": "EROFS",
+    "detail": "[Errno 30] Read-only file system: '/home/agent/reference/planted.txt'",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "write_read_only_submount",
+    "outcome": "blocked",
+    "error": "EROFS",
+    "detail": "[Errno 30] Read-only file system: '/home/agent/reference/mounted/planted.txt'",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "inherited_fd",
+    "outcome": "blocked",
+    "error": "EBADF",
+    "detail": "[Errno 9] Bad file descriptor: '.aws/credentials'",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "fd_from_host_service",
+    "outcome": "blocked",
+    "error": "EACCES",
+    "detail": "[Errno 13] Permission denied: '.aws/credentials'",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "list_host_processes",
+    "outcome": "blocked",
+    "error": "not-visible",
+    "detail": "no process in /proc carries the victim's marker",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "kill_host_process",
+    "outcome": "blocked",
+    "error": "ESRCH",
+    "detail": "[Errno 3] No such process",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "sysv_shm",
+    "outcome": "blocked",
+    "error": "ENOENT",
+    "detail": "[Errno 2] shmget: No such file or directory",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "abstract_socket",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-HOST-SERVICE-caf09e9f0af61d02",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "direct_tcp",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-denied.test-32158c6aaa9616f8",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "proxy_denied_host",
+    "outcome": "n/a",
+    "error": null,
+    "detail": "",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "metadata_direct",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-rebind.test-4d063d9fef927cdd",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "metadata_via_proxy",
+    "outcome": "n/a",
+    "error": null,
+    "detail": "",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "mount",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "missing-target probe: EPERM",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "userns_mount",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] unshare: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "userns_unshare",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] unshare: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "userns_clone",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] clone: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "userns_clone3",
+    "outcome": "blocked",
+    "error": "ENOSYS",
+    "detail": "[Errno 38] clone3: Function not implemented",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "file_capabilities",
+    "outcome": "blocked",
+    "error": "no-capabilities",
+    "detail": "the binary ran with CapEff 0000000000000000",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "ptrace",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] ptrace: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "io_uring_setup",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] io_uring_setup: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "keyctl",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] keyctl: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "fork_bomb",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "forked 100 processes, more than the limit of 32",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "memory_hog",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "held 256 MiB, more than the limit of 96 MiB",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "cpu_hog",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "used 1.00 of a core",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "ctl_workspace_write",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "wrote control.txt in the workspace",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "ctl_tmp_write",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "wrote and read back /tmp/control.txt: ok",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "ctl_system_read",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "PRETTY_NAME=\"Debian GNU/Linux 13 (trixie)\"",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "ctl_dev",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "read 8 random bytes",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "ctl_subprocess",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "ran",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "ctl_thread",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "ran",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "ctl_hostname",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "sandbox",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "ctl_parent_capabilities",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "CapEff 0000000000000000",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "ctl_proxy_allowed",
+    "outcome": "n/a",
+    "error": null,
+    "detail": "",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "gap_env_secret",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-API-TOKEN-73703db09b40e95d",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "gap_workspace_secret",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-DOTENV-f218978c378a60b8",
+    "problems": []
+   },
+   {
+    "column": "L4",
+    "attack": "gap_git_hook",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "planted .git/hooks/pre-commit, which runs outside the sandbox on the next commit",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "read_secret",
+    "outcome": "blocked",
+    "error": "ENOENT",
+    "detail": "[Errno 2] No such file or directory: '/home/agent/.aws/credentials'",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "read_secret_dotdot",
+    "outcome": "blocked",
+    "error": "ENOENT",
+    "detail": "[Errno 2] No such file or directory: '/../home/agent/.aws/credentials'",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "read_host_tmp",
+    "outcome": "blocked",
+    "error": "ENOENT",
+    "detail": "[Errno 2] No such file or directory: '/tmp/host-tmp-secret'",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "write_outside",
+    "outcome": "blocked",
+    "error": "EROFS",
+    "detail": "[Errno 30] Read-only file system: '/home/agent/.bashrc'",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "write_read_only_path",
+    "outcome": "blocked",
+    "error": "EROFS",
+    "detail": "[Errno 30] Read-only file system: '/home/agent/reference/planted.txt'",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "write_read_only_submount",
+    "outcome": "blocked",
+    "error": "EROFS",
+    "detail": "[Errno 30] Read-only file system: '/home/agent/reference/mounted/planted.txt'",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "inherited_fd",
+    "outcome": "blocked",
+    "error": "EBADF",
+    "detail": "[Errno 9] Bad file descriptor: '.aws/credentials'",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "fd_from_host_service",
+    "outcome": "blocked",
+    "error": "ECONNREFUSED",
+    "detail": "[Errno 111] Connection refused",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "list_host_processes",
+    "outcome": "blocked",
+    "error": "not-visible",
+    "detail": "no process in /proc carries the victim's marker",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "kill_host_process",
+    "outcome": "blocked",
+    "error": "ESRCH",
+    "detail": "[Errno 3] No such process",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "sysv_shm",
+    "outcome": "blocked",
+    "error": "ENOENT",
+    "detail": "[Errno 2] shmget: No such file or directory",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "abstract_socket",
+    "outcome": "blocked",
+    "error": "ECONNREFUSED",
+    "detail": "[Errno 111] Connection refused",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "direct_tcp",
+    "outcome": "blocked",
+    "error": "ENETUNREACH",
+    "detail": "[Errno 101] Network is unreachable",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "proxy_denied_host",
+    "outcome": "blocked",
+    "error": "403 host-not-allowed",
+    "detail": "",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "metadata_direct",
+    "outcome": "blocked",
+    "error": "ENETUNREACH",
+    "detail": "[Errno 101] Network is unreachable",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "metadata_via_proxy",
+    "outcome": "blocked",
+    "error": "403 address-denied",
+    "detail": "",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "mount",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "missing-target probe: EPERM",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "userns_mount",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] unshare: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "userns_unshare",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] unshare: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "userns_clone",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] clone: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "userns_clone3",
+    "outcome": "blocked",
+    "error": "ENOSYS",
+    "detail": "[Errno 38] clone3: Function not implemented",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "file_capabilities",
+    "outcome": "blocked",
+    "error": "no-capabilities",
+    "detail": "the binary ran with CapEff 0000000000000000",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "ptrace",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] ptrace: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "io_uring_setup",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] io_uring_setup: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "keyctl",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] keyctl: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "fork_bomb",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "forked 100 processes, more than the limit of 32",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "memory_hog",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "held 256 MiB, more than the limit of 96 MiB",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "cpu_hog",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "used 1.00 of a core",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "ctl_workspace_write",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "wrote control.txt in the workspace",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "ctl_tmp_write",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "wrote and read back /tmp/control.txt: ok",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "ctl_system_read",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "PRETTY_NAME=\"Debian GNU/Linux 13 (trixie)\"",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "ctl_dev",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "read 8 random bytes",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "ctl_subprocess",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "ran",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "ctl_thread",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "ran",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "ctl_hostname",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "sandbox",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "ctl_parent_capabilities",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "CapEff 0000000000000000",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "ctl_proxy_allowed",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-allowed.test-8f874993e7862d41",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "gap_env_secret",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-API-TOKEN-73703db09b40e95d",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "gap_workspace_secret",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-DOTENV-f218978c378a60b8",
+    "problems": []
+   },
+   {
+    "column": "L5",
+    "attack": "gap_git_hook",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "planted .git/hooks/pre-commit, which runs outside the sandbox on the next commit",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "read_secret",
+    "outcome": "blocked",
+    "error": "ENOENT",
+    "detail": "[Errno 2] No such file or directory: '/home/agent/.aws/credentials'",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "read_secret_dotdot",
+    "outcome": "blocked",
+    "error": "ENOENT",
+    "detail": "[Errno 2] No such file or directory: '/../home/agent/.aws/credentials'",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "read_host_tmp",
+    "outcome": "blocked",
+    "error": "ENOENT",
+    "detail": "[Errno 2] No such file or directory: '/tmp/host-tmp-secret'",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "write_outside",
+    "outcome": "blocked",
+    "error": "EROFS",
+    "detail": "[Errno 30] Read-only file system: '/home/agent/.bashrc'",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "write_read_only_path",
+    "outcome": "blocked",
+    "error": "EROFS",
+    "detail": "[Errno 30] Read-only file system: '/home/agent/reference/planted.txt'",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "write_read_only_submount",
+    "outcome": "blocked",
+    "error": "EROFS",
+    "detail": "[Errno 30] Read-only file system: '/home/agent/reference/mounted/planted.txt'",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "inherited_fd",
+    "outcome": "blocked",
+    "error": "EBADF",
+    "detail": "[Errno 9] Bad file descriptor: '.aws/credentials'",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "fd_from_host_service",
+    "outcome": "blocked",
+    "error": "ECONNREFUSED",
+    "detail": "[Errno 111] Connection refused",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "list_host_processes",
+    "outcome": "blocked",
+    "error": "not-visible",
+    "detail": "no process in /proc carries the victim's marker",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "kill_host_process",
+    "outcome": "blocked",
+    "error": "ESRCH",
+    "detail": "[Errno 3] No such process",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "sysv_shm",
+    "outcome": "blocked",
+    "error": "ENOENT",
+    "detail": "[Errno 2] shmget: No such file or directory",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "abstract_socket",
+    "outcome": "blocked",
+    "error": "ECONNREFUSED",
+    "detail": "[Errno 111] Connection refused",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "direct_tcp",
+    "outcome": "blocked",
+    "error": "ENETUNREACH",
+    "detail": "[Errno 101] Network is unreachable",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "proxy_denied_host",
+    "outcome": "blocked",
+    "error": "403 host-not-allowed",
+    "detail": "",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "metadata_direct",
+    "outcome": "blocked",
+    "error": "ENETUNREACH",
+    "detail": "[Errno 101] Network is unreachable",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "metadata_via_proxy",
+    "outcome": "blocked",
+    "error": "403 address-denied",
+    "detail": "",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "mount",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "missing-target probe: EPERM",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "userns_mount",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] unshare: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "userns_unshare",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] unshare: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "userns_clone",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] clone: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "userns_clone3",
+    "outcome": "blocked",
+    "error": "ENOSYS",
+    "detail": "[Errno 38] clone3: Function not implemented",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "file_capabilities",
+    "outcome": "blocked",
+    "error": "no-capabilities",
+    "detail": "the binary ran with CapEff 0000000000000000",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "ptrace",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] ptrace: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "io_uring_setup",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] io_uring_setup: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "keyctl",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] keyctl: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "fork_bomb",
+    "outcome": "blocked",
+    "error": "EAGAIN",
+    "detail": "fork 29 failed",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "memory_hog",
+    "outcome": "blocked",
+    "error": "SIGKILL",
+    "detail": "killed holding 81 MiB",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "cpu_hog",
+    "outcome": "blocked",
+    "error": "throttled",
+    "detail": "got 0.52 of a core",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "ctl_workspace_write",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "wrote control.txt in the workspace",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "ctl_tmp_write",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "wrote and read back /tmp/control.txt: ok",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "ctl_system_read",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "PRETTY_NAME=\"Debian GNU/Linux 13 (trixie)\"",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "ctl_dev",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "read 8 random bytes",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "ctl_subprocess",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "ran",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "ctl_thread",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "ran",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "ctl_hostname",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "sandbox",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "ctl_parent_capabilities",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "CapEff 0000000000000000",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "ctl_proxy_allowed",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-allowed.test-8f874993e7862d41",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "gap_env_secret",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-API-TOKEN-73703db09b40e95d",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "gap_workspace_secret",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-DOTENV-f218978c378a60b8",
+    "problems": []
+   },
+   {
+    "column": "L6",
+    "attack": "gap_git_hook",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "planted .git/hooks/pre-commit, which runs outside the sandbox on the next commit",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "read_secret",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-AWS-KEY-3d4f05cb9359b980",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "read_secret_dotdot",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-AWS-KEY-3d4f05cb9359b980",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "read_host_tmp",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-TMP-87d82855b4b6a92c",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "write_outside",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "appended a line to /home/agent/.bashrc",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "write_read_only_path",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "wrote planted.txt in /home/agent/reference",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "write_read_only_submount",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "wrote planted.txt in /home/agent/reference/mounted",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "inherited_fd",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-AWS-KEY-3d4f05cb9359b980",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "fd_from_host_service",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-AWS-KEY-3d4f05cb9359b980",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "list_host_processes",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "3678",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "kill_host_process",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "sent SIGTERM to host PID 3678",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "sysv_shm",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-SHM-1f847b9f83e8c732",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "abstract_socket",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-HOST-SERVICE-caf09e9f0af61d02",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "direct_tcp",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-denied.test-32158c6aaa9616f8",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "proxy_denied_host",
+    "outcome": "n/a",
+    "error": null,
+    "detail": "",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "metadata_direct",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-rebind.test-4d063d9fef927cdd",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "metadata_via_proxy",
+    "outcome": "n/a",
+    "error": null,
+    "detail": "",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "mount",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "missing-target probe: EPERM",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "userns_mount",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] unshare: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "userns_unshare",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] unshare: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "userns_clone",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] clone: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "userns_clone3",
+    "outcome": "blocked",
+    "error": "ENOSYS",
+    "detail": "[Errno 38] clone3: Function not implemented",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "file_capabilities",
+    "outcome": "blocked",
+    "error": "no-capabilities",
+    "detail": "the binary ran with CapEff 0000000000000000",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "ptrace",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] ptrace: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "io_uring_setup",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] io_uring_setup: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "keyctl",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] keyctl: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "fork_bomb",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "forked 100 processes, more than the limit of 32",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "memory_hog",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "held 256 MiB, more than the limit of 96 MiB",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "cpu_hog",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "used 1.00 of a core",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "ctl_workspace_write",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "wrote control.txt in the workspace",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "ctl_tmp_write",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "wrote and read back /tmp/control.txt: ok",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "ctl_system_read",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "PRETTY_NAME=\"Debian GNU/Linux 13 (trixie)\"",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "ctl_dev",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "read 8 random bytes",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "ctl_subprocess",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "ran",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "ctl_thread",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "ran",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "ctl_hostname",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "254c01a728ee",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "ctl_parent_capabilities",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "CapEff 0000000000000000",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "ctl_proxy_allowed",
+    "outcome": "n/a",
+    "error": null,
+    "detail": "",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "gap_env_secret",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-API-TOKEN-73703db09b40e95d",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "gap_workspace_secret",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-DOTENV-f218978c378a60b8",
+    "problems": []
+   },
+   {
+    "column": "filter-only",
+    "attack": "gap_git_hook",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "planted .git/hooks/pre-commit, which runs outside the sandbox on the next commit",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "read_secret",
+    "outcome": "blocked",
+    "error": "EACCES",
+    "detail": "[Errno 13] Permission denied: '/home/agent/.aws/credentials'",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "read_secret_dotdot",
+    "outcome": "blocked",
+    "error": "EACCES",
+    "detail": "[Errno 13] Permission denied: '/../home/agent/.aws/credentials'",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "read_host_tmp",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-TMP-87d82855b4b6a92c",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "write_outside",
+    "outcome": "blocked",
+    "error": "EACCES",
+    "detail": "[Errno 13] Permission denied: '/home/agent/.bashrc'",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "write_read_only_path",
+    "outcome": "blocked",
+    "error": "EACCES",
+    "detail": "[Errno 13] Permission denied: '/home/agent/reference/planted.txt'",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "write_read_only_submount",
+    "outcome": "blocked",
+    "error": "EACCES",
+    "detail": "[Errno 13] Permission denied: '/home/agent/reference/mounted/planted.txt'",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "inherited_fd",
+    "outcome": "blocked",
+    "error": "EACCES",
+    "detail": "[Errno 13] Permission denied: '.aws/credentials'",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "fd_from_host_service",
+    "outcome": "blocked",
+    "error": "EACCES",
+    "detail": "[Errno 13] Permission denied: '.aws/credentials'",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "list_host_processes",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "5594",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "kill_host_process",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "sent SIGTERM to host PID 5594",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "sysv_shm",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-SHM-1f847b9f83e8c732",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "abstract_socket",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-HOST-SERVICE-caf09e9f0af61d02",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "direct_tcp",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-denied.test-32158c6aaa9616f8",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "proxy_denied_host",
+    "outcome": "n/a",
+    "error": null,
+    "detail": "",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "metadata_direct",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-rebind.test-4d063d9fef927cdd",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "metadata_via_proxy",
+    "outcome": "n/a",
+    "error": null,
+    "detail": "",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "mount",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "missing-target probe: ENOENT",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "userns_mount",
+    "outcome": "blocked",
+    "error": "EACCES",
+    "detail": "[Errno 13] Permission denied: '/proc/self/uid_map'",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "userns_unshare",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "entered a new user namespace",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "userns_clone",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "started a child in a new user namespace",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "userns_clone3",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "started a child in a new user namespace",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "file_capabilities",
+    "outcome": "blocked",
+    "error": "no-capabilities",
+    "detail": "the binary ran with CapEff 0000000000000000",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "ptrace",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "attached to another process and stopped it",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "io_uring_setup",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "got a ring: anon_inode:[io_uring]",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "keyctl",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "joined a new session keyring (296824977)",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "fork_bomb",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "forked 100 processes, more than the limit of 32",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "memory_hog",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "held 256 MiB, more than the limit of 96 MiB",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "cpu_hog",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "used 1.00 of a core",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "ctl_workspace_write",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "wrote control.txt in the workspace",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "ctl_tmp_write",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "wrote and read back /tmp/control.txt: ok",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "ctl_system_read",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "PRETTY_NAME=\"Debian GNU/Linux 13 (trixie)\"",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "ctl_dev",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "read 8 random bytes",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "ctl_subprocess",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "ran",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "ctl_thread",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "ran",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "ctl_hostname",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "254c01a728ee",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "ctl_parent_capabilities",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "CapEff 0000000000000000",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "ctl_proxy_allowed",
+    "outcome": "n/a",
+    "error": null,
+    "detail": "",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "gap_env_secret",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-API-TOKEN-73703db09b40e95d",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "gap_workspace_secret",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-DOTENV-f218978c378a60b8",
+    "problems": []
+   },
+   {
+    "column": "landlock-only",
+    "attack": "gap_git_hook",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "planted .git/hooks/pre-commit, which runs outside the sandbox on the next commit",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "read_secret",
+    "outcome": "blocked",
+    "error": "ENOENT",
+    "detail": "[Errno 2] No such file or directory: '/home/agent/.aws/credentials'",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "read_secret_dotdot",
+    "outcome": "blocked",
+    "error": "ENOENT",
+    "detail": "[Errno 2] No such file or directory: '/../home/agent/.aws/credentials'",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "read_host_tmp",
+    "outcome": "blocked",
+    "error": "ENOENT",
+    "detail": "[Errno 2] No such file or directory: '/tmp/host-tmp-secret'",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "write_outside",
+    "outcome": "blocked",
+    "error": "EROFS",
+    "detail": "[Errno 30] Read-only file system: '/home/agent/.bashrc'",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "write_read_only_path",
+    "outcome": "blocked",
+    "error": "EROFS",
+    "detail": "[Errno 30] Read-only file system: '/home/agent/reference/planted.txt'",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "write_read_only_submount",
+    "outcome": "blocked",
+    "error": "EROFS",
+    "detail": "[Errno 30] Read-only file system: '/home/agent/reference/mounted/planted.txt'",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "inherited_fd",
+    "outcome": "blocked",
+    "error": "EBADF",
+    "detail": "[Errno 9] Bad file descriptor: '.aws/credentials'",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "fd_from_host_service",
+    "outcome": "blocked",
+    "error": "ECONNREFUSED",
+    "detail": "[Errno 111] Connection refused",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "list_host_processes",
+    "outcome": "blocked",
+    "error": "not-visible",
+    "detail": "no process in /proc carries the victim's marker",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "kill_host_process",
+    "outcome": "blocked",
+    "error": "ESRCH",
+    "detail": "[Errno 3] No such process",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "sysv_shm",
+    "outcome": "blocked",
+    "error": "ENOENT",
+    "detail": "[Errno 2] shmget: No such file or directory",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "abstract_socket",
+    "outcome": "blocked",
+    "error": "ECONNREFUSED",
+    "detail": "[Errno 111] Connection refused",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "direct_tcp",
+    "outcome": "blocked",
+    "error": "ENETUNREACH",
+    "detail": "[Errno 101] Network is unreachable",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "proxy_denied_host",
+    "outcome": "blocked",
+    "error": "403 host-not-allowed",
+    "detail": "",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "metadata_direct",
+    "outcome": "blocked",
+    "error": "ENETUNREACH",
+    "detail": "[Errno 101] Network is unreachable",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "metadata_via_proxy",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-rebind.test-4d063d9fef927cdd",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "mount",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "missing-target probe: EPERM",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "userns_mount",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] unshare: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "userns_unshare",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] unshare: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "userns_clone",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] clone: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "userns_clone3",
+    "outcome": "blocked",
+    "error": "ENOSYS",
+    "detail": "[Errno 38] clone3: Function not implemented",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "file_capabilities",
+    "outcome": "blocked",
+    "error": "no-capabilities",
+    "detail": "the binary ran with CapEff 0000000000000000",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "ptrace",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] ptrace: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "io_uring_setup",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] io_uring_setup: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "keyctl",
+    "outcome": "blocked",
+    "error": "EPERM",
+    "detail": "[Errno 1] keyctl: Operation not permitted",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "fork_bomb",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "forked 100 processes, more than the limit of 32",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "memory_hog",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "held 256 MiB, more than the limit of 96 MiB",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "cpu_hog",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "used 1.00 of a core",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "ctl_workspace_write",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "wrote control.txt in the workspace",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "ctl_tmp_write",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "wrote and read back /tmp/control.txt: ok",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "ctl_system_read",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "PRETTY_NAME=\"Debian GNU/Linux 13 (trixie)\"",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "ctl_dev",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "read 8 random bytes",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "ctl_subprocess",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "ran",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "ctl_thread",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "ran",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "ctl_hostname",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "sandbox",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "ctl_parent_capabilities",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "CapEff 0000000000000000",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "ctl_proxy_allowed",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-allowed.test-8f874993e7862d41",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "gap_env_secret",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-API-TOKEN-73703db09b40e95d",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "gap_workspace_secret",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "FAKE-DOTENV-f218978c378a60b8",
+    "problems": []
+   },
+   {
+    "column": "L5-no-address-check",
+    "attack": "gap_git_hook",
+    "outcome": "allowed",
+    "error": null,
+    "detail": "planted .git/hooks/pre-commit, which runs outside the sandbox on the next commit",
+    "problems": []
+   }
+  ]
+ ]
+}

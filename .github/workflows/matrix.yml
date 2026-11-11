@@ -1,0 +1,25 @@
+name: attack matrix
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  matrix:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Show the kernel and the user namespace restriction
+        run: |
+          uname -srm
+          sysctl kernel.apparmor_restrict_unprivileged_userns || true
+      - name: Run every attack at every level
+        run: ./run-in-docker.sh
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: results
+          path: |
+            results.md
+            results.json
