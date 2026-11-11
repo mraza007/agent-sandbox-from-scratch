@@ -80,7 +80,12 @@ A policy file sets any field of `Policy` in `policy.py`:
 
 ## Limits
 
-Tested on aarch64 only. The x86_64 syscall numbers match the kernel's table but
-have not been run. This is teaching code. It shares the host kernel, so a kernel
+Tested on aarch64 (OrbStack on a Mac) and on x86_64 (Ubuntu 24.04, in this
+repo's GitHub Actions workflow). The checked-in `results.md` comes from the
+aarch64 run. This is teaching code. It shares the host kernel, so a kernel
 bug reachable through an allowed syscall defeats every layer. `results.md` lists
 attacks it does not stop.
+
+## License
+
+MIT. See `LICENSE`.
